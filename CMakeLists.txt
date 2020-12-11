@@ -1,4 +1,4 @@
-project(FreeRTOS_Emulator)
+project(freertos)
 cmake_minimum_required(VERSION 3.4 FATAL_ERROR)
 set(TargetName ${CMAKE_PROJECT_NAME})
 

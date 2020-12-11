@@ -1,6 +1,11 @@
-#Run FreeRTOS on linux
+# Run FreeRTOS on linux
+
 build:
+mkdir build && cd build
+cmake ../
 make
+cd ..
+
 run: 
-./build/freertos.elf
+bin/freertos
 
