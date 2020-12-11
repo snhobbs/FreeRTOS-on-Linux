@@ -89,10 +89,11 @@ LDFLAGS := \
 	-Wl,--gc-sections \
 	-Wl,--print-memory-usage
 
-COMPONENT_PATH=FreeRTOS
-include $(COMPONENT_PATH)/component.mk
+COMPONENT_PATH=FreeRTOS/FreeRTOS
+include component.mk
 
 INCLUDES += $(COMPONENT_INCLUDES)
+INCLUDES += ./Linux
 
 #******************************************************************************
 # Header File
