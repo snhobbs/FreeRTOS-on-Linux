@@ -9,14 +9,14 @@ More advanced examples can be found in the [freertos-addons Linux demos](https:/
 Each of these has submodules so those have to be checkout out.
 To speed up time and reduce footprint, only the FreeRTOS/Source dir has to be initialized.
 
-> git clone https://github.com/snhobbs/FreeRTOS-on-Linux ./
-> cd FreeRTOS-on-Linux
-> git submodule init
-> git submodule update
-> git submodule sync
-> git submodule foreach git submodule init
-> git submodule foreach git submodule update
-> git submodule foreach git submodule sync
+> git clone https://github.com/snhobbs/FreeRTOS-on-Linux ./ <br>
+> cd FreeRTOS-on-Linux <br>
+> git submodule init <br>
+> git submodule update <br>
+> git submodule sync <br>
+> git submodule foreach git submodule init <br>
+> git submodule foreach git submodule update <br>
+> git submodule foreach git submodule sync <br>
 
 ### build
 > mkdir build && cd build<br>
