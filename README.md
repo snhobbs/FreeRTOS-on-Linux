@@ -5,12 +5,12 @@ main is the most bare bones example of two dynamically created tasks printing to
 More advanced examples can be found in the [freertos-addons Linux demos](https://github.com/michaelbecker/freertos-addons/tree/master/Linux/Demo).
 
 ## Building & Running
-build:
-mkdir build && cd build
-cmake ../
-make
-cd ..
-
-run: 
-bin/freertos
+> build:<br>
+> mkdir build && cd build<br>
+> cmake ../<br>
+> make<br>
+> cd ..<br>
+>
+> run: <br>
+> bin/freertos<br>
 
