@@ -1,3 +1,6 @@
 [submodule "FreeRTOS"]
 	path = lib/FreeRTOS
 	url = ./FreeRTOS
+[submodule "freertos-addons"]
+	path = lib/freertos-addons
+	url = ./freertos-addons

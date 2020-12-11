@@ -20,7 +20,7 @@ find_package(Threads)
 
 set(LIB_PATH ${PROJECT_SOURCE_DIR}/lib)
 set(COMPONENT_PATH ${LIB_PATH}/FreeRTOS/FreeRTOS)
-set(POSIX_PORT_PATH ${LIB_PATH}/FreeRTOS_KernelPosix)
+set(POSIX_PORT_PATH ${LIB_PATH}/freertos-addons/Linux/portable/GCC/Linux)
 set(CONFIG_PATH ${PROJECT_SOURCE_DIR})
 SET(PROJECT_INCLUDES
   ${COMPONENT_PATH}/Source/include
