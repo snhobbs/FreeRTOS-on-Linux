@@ -12,8 +12,10 @@ add_executable(${TargetName})
 target_compile_options(
   ${TargetName}
   PUBLIC
-  "-Wall"
-  "-O0"
+  -Wall
+  -O0
+  -g3
+  -ffreestanding
 )
 
 find_package(Threads)

@@ -16,14 +16,28 @@
                                  StaticTask_t * const pxTaskBuffer );
  * */
 
+#include <errno.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
 #include <FreeRTOS.h>
 #include <task.h>
-
 #include "StaticAllocation.h"
 #include "hooks.h"
+
 #define STACK_SIZE 200
 #define TASK_COUNT
+ /* politically incorrect, but very probably standard conforming */
+ void *malloc (size_t sz) { if (sz>0) errno = ENOMEM; return NULL; }
+ void free(void*ptr) { }
+
+#if 0
+void* malloc (size_t size) {
+  printf("Malloc called %s %s\n", __LINE__, __FILE__);
+  assert(0);
+  return NULL;
+}
+#endif
 /* Structure that will hold the TCB of the task being created. */
 StaticTask_t xTask1Buffer;
 StaticTask_t xTask2Buffer;
@@ -45,7 +59,12 @@ void task(void *arg){
 }
 
 int main(){
+    // Check to see that malloc is disabled
+    auto mem = malloc(100);
+    assert(mem == NULL);
+
     xTaskCreateStatic(task, "task1", STACK_SIZE, "task1", 5, xStack1, &xTask1Buffer);
     xTaskCreateStatic(task, "task2", STACK_SIZE, "task2", 5, xStack2, &xTask2Buffer);
     vTaskStartScheduler();
+    return 0;
 }
