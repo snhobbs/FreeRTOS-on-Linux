@@ -105,7 +105,7 @@ extern "C" {
 #define configUSE_COUNTING_SEMAPHORES			1
 #define configUSE_QUEUE_SETS					1
 #define configUSE_TASK_NOTIFICATIONS			1
-
+#define configSUPPORT_STATIC_ALLOCATION 1
 /* Software timer related configuration options. */
 #define configUSE_TIMERS						1
 #define configTIMER_TASK_PRIORITY				( configMAX_PRIORITIES - 1 )

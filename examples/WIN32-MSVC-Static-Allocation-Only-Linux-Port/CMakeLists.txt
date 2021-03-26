@@ -56,7 +56,6 @@ set(PROJECT_SOURCES
   ${PROJECT_SOURCE_DIR}/main.c
   ${PROJECT_SOURCE_DIR}/hooks.c
   ${COMPONENT_PATH}/Demo/Common/Minimal/StaticAllocation.c
-  #${COMPONENT_PATH}/Demo/Common/Minimal/crhook.c
 )
 target_sources(${TargetName} PUBLIC ${PROJECT_SOURCES})
 
