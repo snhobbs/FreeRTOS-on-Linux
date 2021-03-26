@@ -1,4 +1,7 @@
 # FreeRTOS on linux
+
+* NOTE * Almost identical functionality is available at https://www.freertos.org/FreeRTOS-Plus/FreeRTOS_Plus_POSIX/index.html you may want to start there.
+
 Demo project useful as a starting point for building an emulated application using the FreeRTOS operating
 system on a posix system. Includes the [FreeRTOS](https://github.com/FreeRTOS/FreeRTOS) and [freertos-addons](https://github.com/michaelbecker/freertos-addons/) repositories as submodules. The example
 main is the most bare bones example of two dynamically created tasks printing to screen when they're scheduled.
