@@ -27,7 +27,7 @@
 
 #define STACK_SIZE 200
 #define TASK_COUNT
- /* politically incorrect, but very probably standard conforming */
+ /* good place to look if dynamic allocations aren't working as expected... */
  void *malloc (size_t sz) { if (sz>0) errno = ENOMEM; return NULL; }
  void free(void*ptr) { }
 
