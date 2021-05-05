@@ -28,8 +28,10 @@
 #define STACK_SIZE 200
 #define TASK_COUNT
  /* good place to look if dynamic allocations aren't working as expected... */
+#if 0
  void *malloc (size_t sz) { if (sz>0) errno = ENOMEM; return NULL; }
  void free(void*ptr) { }
+#endif
 
 #if 0
 void* malloc (size_t size) {
@@ -60,8 +62,10 @@ void task(void *arg){
 
 int main(){
     // Check to see that malloc is disabled
+#if 0
     auto mem = malloc(100);
     assert(mem == NULL);
+#endif
 
     xTaskCreateStatic(task, "task1", STACK_SIZE, "task1", 5, xStack1, &xTask1Buffer);
     xTaskCreateStatic(task, "task2", STACK_SIZE, "task2", 5, xStack2, &xTask2Buffer);

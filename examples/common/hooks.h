@@ -51,8 +51,8 @@ void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer, Stack
 /* This demo only uses the standard demo tasks that use statically allocated
 RAM.  A 'check' task is also created to periodically inspect the demo tasks to
 ensure they are still running, and that no errors have been detected. */
-static void prvStartCheckTask( void );
-static void prvCheckTask( void *pvParameters );
+//static void prvStartCheckTask( void );
+//static void prvCheckTask( void *pvParameters );
 
 /*-----------------------------------------------------------*/
 

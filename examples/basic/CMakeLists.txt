@@ -22,12 +22,13 @@ set(COMMON_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/../common)
 set(PROJECT_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/source)
 set(LIB_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../lib)
 set(COMPONENT_PATH ${LIB_PATH}/FreeRTOS/FreeRTOS)
-set(POSIX_PORT_PATH ${LIB_PATH}/freertos-addons/Linux/portable/GCC/Linux)
+set(POSIX_PORT_PATH ${COMPONENT_PATH}/Source/portable/ThirdParty/GCC/Posix)
 set(CONFIG_PATH ${PROJECT_SOURCE_DIR})
 SET(PROJECT_INCLUDES
   ${PROJECT_SOURCE_DIR}
   ${COMPONENT_PATH}/Source/include
   ${POSIX_PORT_PATH}
+  ${POSIX_PORT_PATH}/utils
   ${CONFIG_PATH}
 )
 
@@ -51,6 +52,7 @@ set(PROJECT_SOURCES
 	${COMPONENT_PATH}/Source/timers.c
 	${COMPONENT_PATH}/Source/portable/MemMang/heap_4.c
 	${POSIX_PORT_PATH}/port.c
+  ${POSIX_PORT_PATH}/utils/wait_for_event.c
   ${PROJECT_SOURCE_DIR}/main.c
 )
 target_sources(${TargetName} PUBLIC ${PROJECT_SOURCES})
