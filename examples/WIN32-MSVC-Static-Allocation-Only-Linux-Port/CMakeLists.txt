@@ -22,7 +22,7 @@ set(COMMON_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/../common)
 set(PROJECT_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/source)
 set(LIB_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../lib)
 set(COMPONENT_PATH ${LIB_PATH}/FreeRTOS/FreeRTOS)
-set(POSIX_PORT_PATH ${LIB_PATH}/freertos-addons/Linux/portable/GCC/Linux)
+set(POSIX_PORT_PATH ${COMPONENT_PATH}/Source/portable/ThirdParty/GCC/Posix)
 set(CONFIG_PATH ${PROJECT_SOURCE_DIR})
 SET(PROJECT_INCLUDES
   ${CMAKE_CURRENT_SOURCE_DIR}/../../include
@@ -31,6 +31,7 @@ SET(PROJECT_INCLUDES
   ${COMPONENT_PATH}/Source/include
   ${COMPONENT_PATH}/Demo/Common/include
   ${POSIX_PORT_PATH}
+  ${POSIX_PORT_PATH}/utils
   ${CONFIG_PATH}
 )
 
@@ -56,6 +57,7 @@ set(PROJECT_SOURCES
   ${COMPONENT_PATH}/Source/portable/MemMang/heap_4.c
   #${COMPONENT_PATH}/Source/portable/MemMang/heap_1.c
 	${POSIX_PORT_PATH}/port.c
+  ${POSIX_PORT_PATH}/utils/wait_for_event.c
   ${PROJECT_SOURCE_DIR}/main.c
   ${COMPONENT_PATH}/Demo/Common/Minimal/StaticAllocation.c
 )
