@@ -22,3 +22,7 @@ git submodule update --init --recursive --depth=2
 cd examples/basic && mkdir build && cmake ../ && make
 ./freertos
 ```
+
+## Similar Projects
+- https://github.com/innerand/FreeRTOSLinux
+- As of 10.4.0 an official Linux Port exists: https://www.freertos.org/FreeRTOS-simulator-for-Linux.html
