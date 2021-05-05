@@ -20,12 +20,14 @@ target_compile_options(
 
 find_package(Threads)
 
+set(COMMON_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/../common)
 set(PROJECT_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/source)
 set(LIB_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../lib)
 set(COMPONENT_PATH ${LIB_PATH}/FreeRTOS/FreeRTOS)
 set(POSIX_PORT_PATH ${LIB_PATH}/freertos-addons/Linux/portable/GCC/Linux)
 set(CONFIG_PATH ${PROJECT_SOURCE_DIR})
 SET(PROJECT_INCLUDES
+  ${COMMON_SOURCE}
   ${PROJECT_SOURCE_DIR}
   ${COMPONENT_PATH}/Source/include
   ${COMPONENT_PATH}/Demo/Common/include
@@ -55,7 +57,7 @@ set(PROJECT_SOURCES
   #${COMPONENT_PATH}/Source/portable/MemMang/heap_1.c
 	${POSIX_PORT_PATH}/port.c
   ${PROJECT_SOURCE_DIR}/main.c
-  ${PROJECT_SOURCE_DIR}/hooks.c
+  ${COMMON_SOURCE}/hooks.c
   ${COMPONENT_PATH}/Demo/Common/Minimal/StaticAllocation.c
   #${COMPONENT_PATH}/Demo/Common/Minimal/crhook.c
 )

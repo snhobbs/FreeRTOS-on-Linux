@@ -18,6 +18,7 @@ target_compile_options(
 
 find_package(Threads)
 
+set(COMMON_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/../common)
 set(PROJECT_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/source)
 set(LIB_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../lib)
 set(COMPONENT_PATH ${LIB_PATH}/FreeRTOS/FreeRTOS)
@@ -26,6 +27,7 @@ set(CONFIG_PATH ${PROJECT_SOURCE_DIR})
 SET(PROJECT_INCLUDES
   ${CMAKE_CURRENT_SOURCE_DIR}/../../include
   ${PROJECT_SOURCE_DIR}
+  ${COMMON_SOURCE}
   ${COMPONENT_PATH}/Source/include
   ${COMPONENT_PATH}/Demo/Common/include
   ${POSIX_PORT_PATH}
@@ -43,6 +45,7 @@ set(PROJECT_LIBRARIES
 #include(${CMAKE_MODULE_PATH}/tests.cmake)
 target_link_libraries(${TargetName} ${PROJECT_LIBRARIES})
 set(PROJECT_SOURCES
+  ${COMMON_SOURCE}/hooks.c
 	${COMPONENT_PATH}/Source/croutine.c
 	${COMPONENT_PATH}/Source/event_groups.c
 	${COMPONENT_PATH}/Source/list.c
@@ -54,7 +57,6 @@ set(PROJECT_SOURCES
   #${COMPONENT_PATH}/Source/portable/MemMang/heap_1.c
 	${POSIX_PORT_PATH}/port.c
   ${PROJECT_SOURCE_DIR}/main.c
-  ${PROJECT_SOURCE_DIR}/hooks.c
   ${COMPONENT_PATH}/Demo/Common/Minimal/StaticAllocation.c
 )
 target_sources(${TargetName} PUBLIC ${PROJECT_SOURCES})

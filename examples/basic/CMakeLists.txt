@@ -18,6 +18,7 @@ target_compile_options(
 
 find_package(Threads)
 
+set(COMMON_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/../common)
 set(PROJECT_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/source)
 set(LIB_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../lib)
 set(COMPONENT_PATH ${LIB_PATH}/FreeRTOS/FreeRTOS)
