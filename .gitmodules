@@ -1,6 +1,3 @@
 [submodule "FreeRTOS"]
 	path = lib/FreeRTOS
 	url = git@github.com:FreeRTOS/FreeRTOS.git
-[submodule "freertos-addons"]
-	path = lib/freertos-addons
-	url = git@github.com:michaelbecker/freertos-addons.git
