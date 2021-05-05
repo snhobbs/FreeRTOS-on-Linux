@@ -34,4 +34,11 @@ __pycache__
 # Compilation Results
 *.axf
 *.bin
+
+# ninja build
+.ninja_deps
+.ninja_log
+build.ninja
+
+
 bin
