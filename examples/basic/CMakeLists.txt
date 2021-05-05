@@ -24,7 +24,6 @@ set(COMPONENT_PATH ${LIB_PATH}/FreeRTOS/FreeRTOS)
 set(POSIX_PORT_PATH ${LIB_PATH}/freertos-addons/Linux/portable/GCC/Linux)
 set(CONFIG_PATH ${PROJECT_SOURCE_DIR})
 SET(PROJECT_INCLUDES
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../include
   ${PROJECT_SOURCE_DIR}
   ${COMPONENT_PATH}/Source/include
   ${POSIX_PORT_PATH}
@@ -42,7 +41,7 @@ set(PROJECT_LIBRARIES
 #include(${CMAKE_MODULE_PATH}/tests.cmake)
 target_link_libraries(${TargetName} ${PROJECT_LIBRARIES})
 set(PROJECT_SOURCES
-	${COMPONENT_PATH}/Source/croutine.c
+  #${COMPONENT_PATH}/Source/croutine.c
 	${COMPONENT_PATH}/Source/event_groups.c
 	${COMPONENT_PATH}/Source/list.c
 	${COMPONENT_PATH}/Source/queue.c

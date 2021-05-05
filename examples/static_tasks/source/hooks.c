@@ -44,6 +44,7 @@
 #include "task.h"
 #include <stdint.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /*-----------------------------------------------------------*/
 void vApplicationStackOverflowHook( TaskHandle_t pxTask, char *pcTaskName )
